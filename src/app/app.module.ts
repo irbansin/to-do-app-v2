@@ -7,12 +7,14 @@ import { TodoListHeaderComponent } from './todo-list-header/todo-list-header.com
 
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { TodoListItemComponent } from './todo-list-item/todo-list-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoListHeaderComponent,
-    TodoListComponent
+    TodoListComponent,
+    TodoListItemComponent
   ],
   imports: [
     BrowserModule,
