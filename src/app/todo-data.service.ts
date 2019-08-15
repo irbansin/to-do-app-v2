@@ -7,19 +7,29 @@ export class TodoDataService {
   // Placeholder for last id so we can simulate
   // automatic incrementing of ids
   lastId = 0;
-
-  // Placeholder for todos
   todos: Todo[] = [];
 
-  constructor() {
-  }
 
+  constructor() {
+    const todos = this.getAllTodos();
+
+    if (todos.length === 0) {
+      this.lastId = 0;
+    } else {
+      const maxId = todos[todos.length - 1].id;
+      this.lastId = maxId + 1;
+    }
+  }
+  private setLocalStorageTodos(todos: Todo[]): void {
+    localStorage.setItem('todos', JSON.stringify({ todos }));
+  }
   // Simulate POST /todos
   addTodo(todo: Todo): TodoDataService {
     if (!todo.id) {
       todo.id = ++this.lastId;
     }
     this.todos.push(todo);
+    this.setLocalStorageTodos(this.todos);
     return this;
   }
 
@@ -27,22 +37,14 @@ export class TodoDataService {
   deleteTodoById(id: number): TodoDataService {
     this.todos = this.todos
       .filter(todo => todo.id !== id);
+    this.setLocalStorageTodos(this.todos);
     return this;
-  }
-
-  // Simulate PUT /todos/:id
-  updateTodoById(id: number, values: object = {}): Todo {
-    const todo = this.getTodoById(id);
-    if (!todo) {
-      return null;
-    }
-    Object.assign(todo, values);
-    return todo;
   }
 
   // Simulate GET /todos
   getAllTodos(): Todo[] {
-    return this.todos;
+    const localStorageItem = JSON.parse(localStorage.getItem('todos'));
+    return localStorageItem == null ? [] : localStorageItem.todos;
   }
 
   // Simulate GET /todos/:id
@@ -58,6 +60,15 @@ export class TodoDataService {
       complete: !todo.complete
     });
     return updatedTodo;
+  }
+  // Simulate PUT /todos/:id
+  updateTodoById(id: number, values: object = {}): Todo {
+    const todo = this.getTodoById(id);
+    if (!todo) {
+      return null;
+    }
+    Object.assign(todo, values);
+    return todo;
   }
 
 }
