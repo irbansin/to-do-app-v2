@@ -59,6 +59,7 @@ export class TodoDataService {
     const updatedTodo = this.updateTodoById(todo.id, {
       complete: !todo.complete
     });
+    this.setLocalStorageTodos(this.todos);
     return updatedTodo;
   }
   // Simulate PUT /todos/:id
