@@ -1,5 +1,6 @@
 <div class="view">
-  <input class="toggle" type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.complete">
-  <label>{{todo.title}}</label>
-  <button class="destroy" (click)="removeTodo(todo)"></button>
+    <mat-checkbox class="" type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.complete"></mat-checkbox>
+    <mat-label class="">{{todo.title}}</mat-label>
+    <mat-icon type="buttons" class="buttons" (click)="removeTodo(todo)">delete</mat-icon>
+
 </div>

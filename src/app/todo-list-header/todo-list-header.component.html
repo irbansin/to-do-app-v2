@@ -11,7 +11,7 @@
 <div class=container>
     <form class="example-form">
         <mat-form-field class="example-full-width">
-            <input matInput placeholder="Add To do" id="msg" type="text" class="form-control" (keyup.enter)="addTodo()" [(ngModel)]='newTodo.title' value={{newTodo.title}} [ngModelOptions]="{standalone: true}" />
+            <input autocomplete="off" matInput placeholder="Add To do" id="msg" type="text" class="form-control" (keyup.enter)="addTodo()" [(ngModel)]='newTodo.title' value={{newTodo.title}} [ngModelOptions]="{standalone: true}" />
           </mat-form-field>
     </form>
 </div>
