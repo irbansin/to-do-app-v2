@@ -1,0 +1,25 @@
+example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+.navbar-header-center{
+  float: left;
+  text-align: center;
+  width: 100%;
+}
+
+.navbar-brand-center{
+  float:none;
+}
+
+.container{
+  padding-left: 33%;
+  padding-right: 33%;
+  padding-top: 20px;
+  padding-bottom: 20%;
+}

@@ -1,5 +1,19 @@
-<header class="header">
-  <h1>Todos</h1>
-  <input class="new-todo" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newTodo.title"
-         (keyup.enter)="addTodo()">
-</header>
+<mat-toolbar color="primary">
+  <div class='navbar-header-center'>
+      <div class='navbar-brand-center'>
+        <header class="header">
+        <h1>Todos</h1>
+      </header>
+      </div>
+  </div>
+
+</mat-toolbar>
+<div class=container>
+    <form class="example-form">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Add To do" id="msg" type="text" class="form-control" (keyup.enter)="addTodo()" [(ngModel)]='newTodo.title' value={{newTodo.title}} [ngModelOptions]="{standalone: true}" />
+          </mat-form-field>
+    </form>
+</div>
+
+
