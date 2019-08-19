@@ -1,6 +1,5 @@
-<div class="view">
-    <mat-checkbox class="" type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.complete"></mat-checkbox>
-    <mat-label class="">{{todo.title}}</mat-label>
-    <mat-icon type="buttons" class="buttons" (click)="removeTodo(todo)">delete</mat-icon>
-
+<div class="full-width">
+    <mat-checkbox class="md-checkbox" type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.complete"></mat-checkbox>
+    <label class="min-width" [class.completed]='todo.complete'>{{todo.title}}</label>
+    <button type="button" class="md-button md-fab md-mini pull-right" (click)="removeTodo(todo)">X</button>
 </div>

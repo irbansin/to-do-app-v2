@@ -10,7 +10,7 @@
 </mat-toolbar>
 <div class=container>
     <form [formGroup]="accountForm" class="example-form" (ngSubmit)="addTodo()">
-        <mat-form-field class="example-full-width">
+        <mat-form-field class="full-width">
             <input autocomplete="off"
             matInput placeholder="Add To do"
             id="todoInput"
@@ -18,13 +18,14 @@
             type="text"
             class="form-control"/>
         </mat-form-field>
+        <button class="md-button md-fab md-mini" type="submit"
+        [disabled]="!accountForm.valid">+</button>
         <div *ngIf="todoInput.touched && todoInput.errors">
             <div class="alert alert-danger" *ngIf="todoInput.errors.required">
               Please Enter text
             </div>
         </div>
-        <button class="btn btn-primary" type="submit"
-        [disabled]="!accountForm.valid">+</button>
+
     </form>
 </div>
 

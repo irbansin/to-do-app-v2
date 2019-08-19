@@ -1,7 +1,57 @@
-.label{
 
+.completed{
+  text-decoration: line-through;
+  color: grey;
+}
+.md-button {
+
+  border-radius: 3px;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration:none;
+  border: none;
+  outline: none;
+  position: absolute;
+  right: 10px;
 }
 
-.buttons{
-  float: right;
+.md-button.md-fab {
+  line-height: 5.6rem;
+  min-width: 0;
+  width: 5.6rem;
+  height: 5.6rem;
+  border-radius: 50%;
+}
+
+.md-button.md-fab.md-mini {
+  line-height: 2rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+.md-button {
+  color : currentColor;
+}
+
+.md-button:not([disabled]):hover {
+  background-color: rgba(158, 158, 158, 0.2);
+}
+
+.md-button[disabled] {
+  color : rgba(0, 0, 0, 0.26);
+  background-color: transparent;
+}
+
+.full-width{
+  width: 100%;
+}
+
+.md-checkbox {
+  margin: 8px;
+  cursor: pointer;
+  padding-right: 10px;
+  line-height: 26px;
+  min-width: 18px;
+  min-height: 18px;
 }
