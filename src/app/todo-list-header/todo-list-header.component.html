@@ -9,10 +9,22 @@
 
 </mat-toolbar>
 <div class=container>
-    <form class="example-form">
+    <form [formGroup]="accountForm" class="example-form" (ngSubmit)="addTodo()">
         <mat-form-field class="example-full-width">
-            <input autocomplete="off" matInput placeholder="Add To do" id="msg" type="text" class="form-control" (keyup.enter)="addTodo()" [(ngModel)]='newTodo.title' value={{newTodo.title}} [ngModelOptions]="{standalone: true}" />
-          </mat-form-field>
+            <input autocomplete="off"
+            matInput placeholder="Add To do"
+            id="todoInput"
+            formControlName="todoInput"
+            type="text"
+            class="form-control"/>
+        </mat-form-field>
+        <div *ngIf="todoInput.touched && todoInput.errors">
+            <div class="alert alert-danger" *ngIf="todoInput.errors.required">
+              Please Enter text
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit"
+        [disabled]="!accountForm.valid">+</button>
     </form>
 </div>
 
