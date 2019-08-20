@@ -24,8 +24,10 @@
             <div class="alert alert-danger" *ngIf="todoInput.errors.required">
               Please Enter text
             </div>
+            <div class="alert alert-danger" *ngIf="todoInput.errors.todoExistsValidator">
+                To Do Exists
+              </div>
         </div>
-
     </form>
 </div>
 
