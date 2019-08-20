@@ -48,16 +48,6 @@ export class TodoListHeaderComponent {
     return localStorageItem == null ? [] : localStorageItem.todos;
   }
 
-  checkTodos(todo: Todo): boolean {
-    // const todos = this.getAllTodos();
-
-    // todos.forEach(element => {
-    //   if (element.title === todo.title) {
-    //     return true;
-    //   }
-    // });
-    return false;
-  }
 
   todoExistsValidator(control: FormControl) {
     let todos: Todo[] = [];
@@ -74,7 +64,7 @@ export class TodoListHeaderComponent {
       }
 
     });
-
+    console.log(exists);
     return exists ? {todoExists: true} : null;
   }
 }

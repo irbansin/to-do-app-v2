@@ -70,3 +70,8 @@
   color : rgba(0, 0, 0, 0.26);
   background-color: transparent;
 }
+
+.alert {
+  font-size: 10pt;
+  color: red;
+}

@@ -21,12 +21,12 @@
         <button class="md-button md-fab md-mini" type="submit"
         [disabled]="!accountForm.valid">+</button>
         <div *ngIf="todoInput.touched && todoInput.errors">
-            <div class="alert alert-danger" *ngIf="todoInput.errors.required">
+            <div class="alert" *ngIf="todoInput.errors.required">
               Please Enter text
             </div>
-            <div class="alert alert-danger" *ngIf="todoInput.errors.todoExistsValidator">
+            <div class="alert alert-danger" *ngIf="this.todoExistsValidator.exists">
                 To Do Exists
-              </div>
+            </div>
         </div>
     </form>
 </div>
