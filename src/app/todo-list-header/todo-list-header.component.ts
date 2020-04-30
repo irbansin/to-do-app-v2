@@ -8,7 +8,6 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./todo-list-header.component.css']
 })
 export class TodoListHeaderComponent {
-
   accountForm = new FormGroup({
     todoInput: new FormControl(
       '',
@@ -51,10 +50,9 @@ export class TodoListHeaderComponent {
 
   todoExistsValidator(control: FormControl) {
     let todos: Todo[] = [];
+    let exists: boolean;
     const localStorageItem = JSON.parse(localStorage.getItem('todos'));
     todos = localStorageItem == null ? [] : localStorageItem.todos;
-
-    let exists: boolean;
 
     todos.forEach(element => {
       if (element.title === control.value) {
@@ -68,5 +66,3 @@ export class TodoListHeaderComponent {
     return exists ? {todoExists: true} : null;
   }
 }
-
-
